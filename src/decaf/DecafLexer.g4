@@ -26,6 +26,7 @@ SL_COMMENT : '//' (~'\n')* '\n' -> skip;
 
 CHAR : '\'' (ESC|~'\'') '\'';
 STRING : '"' (ESC|~'"')* '"';
+BARRAS :  '\n' '\t' '\\' '\"';
 
 fragment
 ESC :  '\\' ('n'|'"');
