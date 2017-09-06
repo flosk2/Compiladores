@@ -31,22 +31,37 @@ class Main {
 
 		        			switch (token.getType())
 		        			{
-		        			case DecafLexer.ID:
-		        				type = " IDENTIFIER";
-		        				break;
-						case DecafLexer.CHAR:
+		        			
+		        			case DecafLexer.KEYWORD:
+		        				type = "RESERVADA";
+							  			
+							break;
+
+		        			case DecafLexer.NUMBER:
+		        				type = "NUMERO";
+							  			
+							break;
+						case DecafLexer.ID:
+		        				type = "IDENTIFIER";
+							  			
+							break;
+						case DecafLexer.CHAR2:
 							type = " CHARLITERAL";
 							break;
 						case DecafLexer.STRING:
 							type ="STRING";
 							break;
-						case DecafLexer.BARRAS:
-							type ="BARRAS";
+						case DecafLexer.HEX:
+							type ="HEXADECIMAL";
 							break;
 
-		        			}
-		        			System.out.println (token.getLine() + type + " " + text);
-		        		}
+						}
+						
+							System.out.println (token.getType());
+		        			System.out.println (token.getLine() + " " +type + " " + text);
+
+
+						}
 		        		done = true;
         			} catch(Exception e) {
         	        	// print the error:
