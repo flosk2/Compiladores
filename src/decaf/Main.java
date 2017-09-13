@@ -55,9 +55,15 @@ class Main {
 							type ="HEXADECIMAL";
 							break;
 
+						
+						case DecafLexer.OP:
+							type ="OPERADOR";
+							break;
+
 						}
 						
-							System.out.println (token.getType());
+						
+							//ssadsss
 		        			System.out.println (token.getLine() + " " +type + " " + text);
 
 
