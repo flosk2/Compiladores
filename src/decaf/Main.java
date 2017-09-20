@@ -30,14 +30,11 @@ class Main {
 		        			String text = token.getText();
 
 		        			switch (token.getType())
-		        			{
+	        			{
 		        			
-		        			case DecafLexer.KEYWORD:
-		        				type = "RESERVADA";
-							  			
-							break;
+		        			
 
-		        			case DecafLexer.NUMBER:
+		        			case DecafLexer.INT:
 		        				type = "NUMERO";
 							  			
 							break;
@@ -60,10 +57,69 @@ class Main {
 							type ="OPERADOR";
 							break;
 
-						}
 						
+
+
+
+
+						case DecafLexer.BOOLEANO:
+							type ="BOOLEANO";
+							break;
+						case DecafLexer.SAIR:
+							type ="SAIR";
+							break;
+
+
+						case DecafLexer.CLASSE:
+							type ="CLASSE";
+							break;
+
+						case DecafLexer.SENAO:
+							type ="SENAO";
+							break;
+						case DecafLexer.FALSO:
+							type ="FALSO";
+							break;
+
+						case DecafLexer.SE:
+							type ="SE";
+							break;
+
+						case DecafLexer.INTEIRO:
+							type ="INTEIRO";
+							break;
+
+						case DecafLexer.RETORNO:
+							type ="RETORNO";
+							break;
+						case DecafLexer.VERDADE:
+							type ="VERDADE";
+							break;
+						case DecafLexer.VAZIO:
+							type ="VAZIO";
+							break;
+
+						case DecafLexer.VA:
+							type ="VA";
+							break;
+
+						case DecafLexer.PARDEFOR:
+							type ="PARDEFOR";
+							break;
+
+						case DecafLexer.QUEBRA:
+							type ="QUEBRA";
+							break;
+
+						case DecafLexer.CONTINUAR:
+							type ="CONTINUAR";
+							break;
+						//case DecafLexer.GATO:
+							//throw new Exception("unexpected char: 0x");
+							
+                                                     }	
 						
-							//ssadsss
+						//adafsafsfsss
 		        			System.out.println (token.getLine() + " " +type + " " + text);
 
 
