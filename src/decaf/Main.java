@@ -114,12 +114,12 @@ class Main {
 						case DecafLexer.CONTINUAR:
 							type ="CONTINUAR";
 							break;
-						//case DecafLexer.GATO:
-							//throw new Exception("unexpected char: 0x");
+						case DecafLexer.GATO:
+							throw new Exception("unexpected char: 0x");
 							
                                                      }	
 						
-						//adafsafsfsss
+						//afafs
 		        			System.out.println (token.getLine() + " " +type + " " + text);
 
 

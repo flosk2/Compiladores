@@ -11,14 +11,19 @@ options
 
 tokens
 {
-  TK_class
+
 }
 
 
+TK_class: 'class Program'; 
 
 LCURLY : '{';
 RCURLY : '}';
 
+LPARENT : '(';
+RPARENT : ')';
+
+PONTOVIRGULA : ';';
 
 
 BOOLEANO : 'boolean';
@@ -37,7 +42,18 @@ QUEBRA : 'break';
 CONTINUAR : 'continue';
  
 
-OP: '+'|'-'|'*'|'<'|'<='|'!='|'&&';
+OP: ARIT|IGUA|COND|REL;
+
+ARITMETICO: ARIT;
+IGUALDADE: IGUA;
+CONDICIONAL : COND;
+RELACIONAMENTO: REL;
+
+fragment ARIT: ('+'|'-'|'*'|'/'|'%');
+fragment IGUA: ('=='|'!='|'=');
+fragment REL: ('>'|'<'|'>='|'<=');
+fragment COND: ('&&'|'||'); 
+
 
 HEX: '0x' (HEX_DIGIT)+;
 
@@ -60,13 +76,12 @@ CHAR2 :'\''('A'..'Z'|'a'..'z'|'0'..'9'|ESC|ASC)'\'';
 
 BARRAS :'\n' '\t' '\\' '\"';
 
-//GATO : '0x';
+TK: ','|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'+'|'-'|'/'|':'|';'|'<'|'='|'@'|'>'|'['|']'|'{'|'}'|'^'|'_'|'`'|'|'|'~';
 
+ID : LETTER LETTER_OR_DIGIT*;
 
+GATO : '0x';
 
-TK: ','|'?'|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'+'|'-'|'/'|':'|';'|'<'|'='|'@'|'>'|'['|']'|'{'|'}'|'^'|'_'|'`'|'|'|'~';
-
-ID : (~'.')(~'0'..'9') LETTER LETTER_OR_DIGIT*;
 
 fragment LETTER: [a-zA-Z_];
 fragment LETTER_OR_DIGIT: [a-zA-Z_0-9];
