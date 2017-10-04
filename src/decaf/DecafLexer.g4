@@ -49,12 +49,14 @@ ARITMETICO: ARIT;
 IGUALDADE: IGUA;
 CONDICIONAL : COND;
 RELACIONAMENTO: REL;
+OPDIVERSOS: A_SING;
 
 fragment ARIT: ('+'|'-'|'*'|'/'|'%');
 fragment IGUA: ('=='|'!='|ATRIBFOR);
 fragment REL: ('>'|'<'|'>='|'<=');
 fragment COND: ('&&'|'||'); 
 fragment ATRIBFOR: '=';
+fragment A_SING: (ATRIBFOR|'+='|'-=');
 
 HEX: '0x' (HEX_DIGIT)+;
 
@@ -73,8 +75,8 @@ WS_ :(' ' | '\n' ) -> skip;
 SL_COMMENT :'//' (~'\n')* '\n' -> skip;
 CHAR2 :'\''('A'..'Z'|'a'..'z'|'0'..'9'|ESC|ASC)'\'';
 
-CHAVE1 :'[';
-CHAVE2 :']';
+COLCHETE1 :'[';
+COLCHETE2 :']';
 
 
 BARRAS :'\n' '\t' '\\' '\"';
