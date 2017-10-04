@@ -25,6 +25,7 @@ RPARENT : ')';
 
 PONTOVIRGULA : ';';
 
+VIRGULA: ',';
 
 BOOLEANO : 'boolean';
 SAIR : 'callout';
@@ -50,10 +51,10 @@ CONDICIONAL : COND;
 RELACIONAMENTO: REL;
 
 fragment ARIT: ('+'|'-'|'*'|'/'|'%');
-fragment IGUA: ('=='|'!='|'=');
+fragment IGUA: ('=='|'!='|ATRIBFOR);
 fragment REL: ('>'|'<'|'>='|'<=');
 fragment COND: ('&&'|'||'); 
-
+fragment ATRIBFOR: '=';
 
 HEX: '0x' (HEX_DIGIT)+;
 
@@ -72,6 +73,8 @@ WS_ :(' ' | '\n' ) -> skip;
 SL_COMMENT :'//' (~'\n')* '\n' -> skip;
 CHAR2 :'\''('A'..'Z'|'a'..'z'|'0'..'9'|ESC|ASC)'\'';
 
+CHAVE1 :'[';
+CHAVE2 :']';
 
 
 BARRAS :'\n' '\t' '\\' '\"';
