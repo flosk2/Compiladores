@@ -23,6 +23,9 @@ RCURLY : '}';
 LPARENT : '(';
 RPARENT : ')';
 
+
+
+
 PONTOVIRGULA : ';';
 
 VIRGULA: ',';
@@ -42,6 +45,7 @@ PARDEFOR: 'forpar';
 QUEBRA : 'break';
 CONTINUAR : 'continue';
  
+EXCLAMACAO: '!';
 
 OP: ARIT|IGUA|COND|REL;
 
@@ -51,14 +55,21 @@ CONDICIONAL : COND;
 RELACIONAMENTO: REL;
 OPDIVERSOS: A_SING;
 
+FORIGUAL: ATRIBFOR;
+
 fragment ARIT: ('+'|'-'|'*'|'/'|'%');
-fragment IGUA: ('=='|'!='|ATRIBFOR);
-fragment REL: ('>'|'<'|'>='|'<=');
+fragment IGUA: ('=='|'!=');
+fragment REL: ('>'|'<'|'>='|'<='|'/');
 fragment COND: ('&&'|'||'); 
 fragment ATRIBFOR: '=';
 fragment A_SING: (ATRIBFOR|'+='|'-=');
 
+
+NEGATIVO: '-';
+
 HEX: '0x' (HEX_DIGIT)+;
+
+DIGITOHEX: HEX_DIGIT;
 
 fragment HEX_DIGIT: [0-9a-fA-F];
 
@@ -77,6 +88,8 @@ CHAR2 :'\''('A'..'Z'|'a'..'z'|'0'..'9'|ESC|ASC)'\'';
 
 COLCHETE1 :'[';
 COLCHETE2 :']';
+
+LETRASDIGITOS: LETTER_OR_DIGIT;
 
 
 BARRAS :'\n' '\t' '\\' '\"';
