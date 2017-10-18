@@ -11,11 +11,12 @@ options
 
 tokens
 {
-
+TK_class
 }
 
 
-TK_class: 'class Program'; 
+
+ 
 
 LCURLY : '{';
 RCURLY : '}';
@@ -33,6 +34,7 @@ VIRGULA: ',';
 BOOLEANO : 'boolean';
 SAIR : 'callout';
 CLASSE : 'class';
+PROGRAMA: 'Program';
 SENAO : 'else';
 FALSO : 'false';
 SE : 'if';
@@ -69,7 +71,6 @@ NEGATIVO: '-';
 
 HEX: '0x' (HEX_DIGIT)+;
 
-DIGITOHEX: HEX_DIGIT;
 
 fragment HEX_DIGIT: [0-9a-fA-F];
 
@@ -89,14 +90,13 @@ CHAR2 :'\''('A'..'Z'|'a'..'z'|'0'..'9'|ESC|ASC)'\'';
 COLCHETE1 :'[';
 COLCHETE2 :']';
 
-LETRASDIGITOS: LETTER_OR_DIGIT;
 
 
 BARRAS :'\n' '\t' '\\' '\"';
 
 TK: ','|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'+'|'-'|'/'|':'|';'|'<'|'='|'@'|'>'|'['|']'|'{'|'}'|'^'|'_'|'`'|'|'|'~';
 
-ID : LETTER LETTER_OR_DIGIT*;
+ID : LETTER (LETTER_OR_DIGIT)*;
 
 GATO : '0x';
 

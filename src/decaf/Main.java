@@ -128,7 +128,7 @@ class Main {
 							
                                                      }	
 						
-						//sssssafsssaDsssasssasss
+						//fadaAFfas
 		        			System.out.println (token.getLine() + " " +type + " " + text);
 
 
