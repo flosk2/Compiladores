@@ -18,12 +18,38 @@ TK_class
 
  
 
+NEGATIVO: '-';
+SOMA: '+';
+MULTIPLICACAO: '*';
+DIVISAO: '/';
+PORCENTAGEM: '%';
+
+
+ARITMETICO: NEGATIVO|SOMA|MULTIPLICACAO|DIVISAO|PORCENTAGEM;
+IGUALDADE: IGUALDUPLO|DIFERENTE;
+RELACIONAMENTO: MAIOR|MENOR|MAIORIGUAL|MENORIGUAL;
+CONDICIONAL: EDUPLO|OUDUPLO;
+OPDIVERSOS: IGUAL|MAISIGUAL|MENOSIGUAL;
+
 LCURLY : '{';
 RCURLY : '}';
 
 LPARENT : '(';
 RPARENT : ')';
 
+OP: ARITMETICO|IGUALDADE|CONDICIONAL|RELACIONAMENTO;
+
+IGUALDUPLO: '==';
+DIFERENTE: '!=';
+MAIOR: '>';
+MENOR: '<';
+MAIORIGUAL: '>=';
+MENORIGUAL: '<=';
+EDUPLO: '&&';
+OUDUPLO: '||';
+IGUAL: '=';
+MAISIGUAL: '+=';
+MENOSIGUAL: '-=';
 
 
 
@@ -49,25 +75,10 @@ CONTINUAR : 'continue';
  
 EXCLAMACAO: '!';
 
-OP: ARIT|IGUA|COND|REL;
-
-ARITMETICO: ARIT;
-IGUALDADE: IGUA;
-CONDICIONAL : COND;
-RELACIONAMENTO: REL;
-OPDIVERSOS: A_SING;
-
-FORIGUAL: ATRIBFOR;
-
-fragment ARIT: ('+'|'-'|'*'|'/'|'%');
-fragment IGUA: ('=='|'!=');
-fragment REL: ('>'|'<'|'>='|'<='|'/');
-fragment COND: ('&&'|'||'); 
-fragment ATRIBFOR: '=';
-fragment A_SING: (ATRIBFOR|'+='|'-=');
 
 
-NEGATIVO: '-';
+
+
 
 HEX: '0x' (HEX_DIGIT)+;
 
@@ -80,9 +91,8 @@ fragment NUMBER: '0'..'9'+;
 
 STRING :'"' ('a'..'z'|'A'..'Z'|'0'..'9'|ASC|ESC|' ' )+ '"';
 
-SINAIS: '-';
 
-WS_ :(' ' | '\n' ) -> skip;
+WS_ :(' ' | '\n'|'\t'|'\r' ) -> skip;
 
 SL_COMMENT :'//' (~'\n')* '\n' -> skip;
 CHAR2 :'\''('A'..'Z'|'a'..'z'|'0'..'9'|ESC|ASC)'\'';
@@ -92,9 +102,9 @@ COLCHETE2 :']';
 
 
 
-BARRAS :'\n' '\t' '\\' '\"';
+//BARRAS :'\n' '\t' '\\' '\"';
 
-TK: ','|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'+'|'-'|'/'|':'|';'|'<'|'='|'@'|'>'|'['|']'|'{'|'}'|'^'|'_'|'`'|'|'|'~';
+
 
 ID : LETTER (LETTER_OR_DIGIT)*;
 
@@ -106,6 +116,6 @@ fragment LETTER_OR_DIGIT: [a-zA-Z_0-9];
 
 fragment ESC :'\\' ('n'|'"'|'t'|'\''|'\\');
 
-fragment ASC :','|'?'|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'+'|'-'|'.'|'/'|':'|';'|'<'|'='|'@'|'>'|'['|']'|'{'|'}'|'^'|'_'|'`'|'|'|'~';
+fragment ASC :','|'?'|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'-'|'+'|'.'|'/'|':'|';'|'<'|'='|'@'|'>'|'['|']'|'{'|'}'|'^'|'_'|'`'|'|'|'~';
 
 

@@ -35,7 +35,7 @@ statement: location assign_op expr PONTOVIRGULA
 
 assign_op: OPDIVERSOS;
 
-method_call: method_name LPARENT expr (VIRGULA expr)* RPARENT | SAIR LPARENT STRING (VIRGULA callout_arg)* RPARENT;
+method_call: method_name LPARENT (expr(VIRGULA expr)*)? RPARENT | SAIR LPARENT STRING (VIRGULA callout_arg)* RPARENT;
 
 method_name: ID;
 
@@ -53,7 +53,7 @@ callout_arg: expr | STRING;
 
 bin_op: arith_op|rel_op|eq_op|cond_op;
 
-arith_op: ARITMETICO;
+arith_op: NEGATIVO|SOMA|MULTIPLICACAO|DIVISAO|PORCENTAGEM;
 
 rel_op: RELACIONAMENTO;
 

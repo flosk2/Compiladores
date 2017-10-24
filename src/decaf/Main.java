@@ -66,19 +66,12 @@ class Main {
 							type ="OPERADOR";
 							break;
 
-						
-
-
-
-
 						case DecafLexer.BOOLEANO:
 							type ="BOOLEANO";
 							break;
 						case DecafLexer.SAIR:
 							type ="SAIR";
 							break;
-
-
 						case DecafLexer.CLASSE:
 							type ="CLASSE";
 							break;
@@ -128,7 +121,7 @@ class Main {
 							
                                                      }	
 						
-						//fadaAFfas
+						//fadasasdaddadadadaAD
 		        			System.out.println (token.getLine() + " " +type + " " + text);
 
 
