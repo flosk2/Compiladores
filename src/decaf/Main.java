@@ -117,11 +117,11 @@ class Main {
 							type ="CONTINUAR";
 							break;
 						case DecafLexer.GATO:
-							throw new Exception("unexpected char: 0x");
+						throw new Exception("unexpected char: 0x");
 							
                                                      }	
 						
-						//fadasasdaddadadadaAD
+						//fadasafsafsfsaadaAD
 		        			System.out.println (token.getLine() + " " +type + " " + text);
 
 
@@ -162,7 +162,7 @@ class Main {
                     panel.add(viewr);
                     frame.add(panel);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frame.setSize(200,200);
+                    frame.setSize(500,500);
                     frame.setVisible(true);
                 }
 

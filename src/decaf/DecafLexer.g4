@@ -78,14 +78,14 @@ EXCLAMACAO: '!';
 
 
 
-
+INT: HEX | NUMBER;
 
 HEX: '0x' (HEX_DIGIT)+;
 
 
 fragment HEX_DIGIT: [0-9a-fA-F];
 
-INT: HEX | NUMBER;
+
 
 fragment NUMBER: '0'..'9'+;
 
