@@ -119,7 +119,7 @@ class Main {
 							
                                                      }	
 						
-						//fadasafsafsfsaadaAD
+						//fadddasdasdasdasdassdaffdadsadsadasdadadsadasdasssaadaAD
 		        			System.out.println (token.getLine() + " " +type + " " + text);
 		        		}
 		        		done = true;
