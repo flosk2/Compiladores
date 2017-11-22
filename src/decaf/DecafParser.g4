@@ -20,7 +20,7 @@ method_decl: (type|VAZIO) ID LPARENT (type ID (VIRGULA type ID)*)? RPARENT block
 
 block:  LCURLY  var_decl* statement*  RCURLY;
 
-var_decl: type ID (VIRGULA type ID)* PONTOVIRGULA;
+var_decl: type ID (VIRGULA (type ID|ID))* PONTOVIRGULA;
 
 type: INTEIRO|BOOLEANO;
 
